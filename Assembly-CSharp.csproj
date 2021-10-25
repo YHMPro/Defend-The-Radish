@@ -65,6 +65,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Entry.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseMgr\BaseAudioMgr\Audio2DMgr\Audio2DMgr.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseMgr\BaseAudioMgr\Audio3DMgr\Audio3DMgr.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseMgr\BaseAudioMgr\AudioClipMgr.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseMgr\BaseAudioMgr\AudioMixerMgr.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseMgr\BaseAudioMgr\BaseAudioMgr.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseMgr\BaseWindowMgr\BaseScreenWindowMgr\BaseScreenWindowMgr.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseMgr\BaseWindowMgr\BaseWindowMgr.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseMgr\BaseWindowMgr\BaseWorldWindowMgr\BaseWorldWindowMgr.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseMono.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseWindow\BaseAudio\Audio2D\Audio2D.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseWindow\BaseAudio\Audio3D\Audio3D.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseWindow\BaseAudio\BaseAudio.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseWindow\BaseScreenWindow\BaseScreenWindow.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseWindow\BaseWorldWindow\BaseWorldWindow.cs" />
+    <Compile Include="Assets\Frame\BaseMono\BaseWindow\WindowBase.cs" />
+    <Compile Include="Assets\Frame\Common\InterfaceMgr.cs" />
+    <Compile Include="Assets\Frame\Common\MesgMgr.cs" />
+    <Compile Include="Assets\Frame\Common\ShareMono.cs" />
+    <Compile Include="Assets\Frame\Extend.cs" />
+    <Compile Include="Assets\Frame\Factory\AbstractSingletonFactory.cs" />
+    <Compile Include="Assets\Frame\Factory\MonoFactory.cs" />
+    <Compile Include="Assets\Frame\Factory\MonoSingletonFactory.cs" />
+    <Compile Include="Assets\Frame\Factory\NotMonoFactory.cs" />
+    <Compile Include="Assets\Frame\Factory\NotMonoSingletonFactory.cs" />
+    <Compile Include="Assets\Frame\Interface.cs" />
+    <Compile Include="Assets\Frame\Load\GoLoad.cs" />
+    <Compile Include="Assets\Frame\Load\GoReusePool.cs" />
+    <Compile Include="Assets\Frame\Load\ResourcesLoad.cs" />
+    <Compile Include="Assets\Frame\Load\SceneLoad.cs" />
+    <None Include="Assets\RES\Skin\Default2.0\skin.xml" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>S:/Unity Pro 2019.3.7f1/MyGitProject/Defend The Radish/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
