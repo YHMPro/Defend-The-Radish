@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Farme.Tool;
 namespace Farme
 {
     /// <summary>
@@ -27,29 +28,28 @@ namespace Farme
         /// 拿去Go实例
         /// </summary>
         /// <param name="reuseGroup">复用组</param>
+        /// <returns></returns>
+        public static GameObject Take(string reuseGroup)
+        {
+            if (ReuseGoDic.TryGetValue(reuseGroup, out List<GameObject> goLi)&& goLi.Count>0)
+            {            
+                GameObject go = goLi[0];              
+                goLi.RemoveAt(0);
+                go.SetActive(true);
+                return go;
+            }      
+            return null;
+        }
+        /// <summary>
+        /// 拿去Go实例
+        /// </summary>
+        /// <param name="reuseGroup">复用组</param>
         /// <param name="result">结果</param>
         /// <returns></returns>
         public static bool Take(string reuseGroup, out GameObject result)
         {
-            result = null;
-            if (ReuseGoDic.TryGetValue(reuseGroup, out List<GameObject> goLi))
-            {
-                foreach (var go in goLi)
-                {
-                    if (go != null)
-                    {
-                        result = go;
-                        result.SetActive(true);
-                        goLi.Remove(result);
-                        return true;
-                    }
-                }
-                if (result == null)
-                {
-                    goLi.Clear();
-                }
-            }
-            return false;
+            result = Take(reuseGroup);        
+            return result!=null;
         }
         /// <summary>
         /// 放入Go实例

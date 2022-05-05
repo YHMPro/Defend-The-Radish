@@ -1,0 +1,14 @@
+{
+ "FontSpr_0":".",
+ "FontSpr_1":"/",
+ "FontSpr_2":"0",
+ "FontSpr_3":"1",
+ "FontSpr_4":"2",
+ "FontSpr_5":"3",
+ "FontSpr_6":"4",
+ "FontSpr_7":"5",
+ "FontSpr_8":"6",
+ "FontSpr_9":"7",
+ "FontSpr_10":"8",
+ "FontSpr_11":"9"
+}

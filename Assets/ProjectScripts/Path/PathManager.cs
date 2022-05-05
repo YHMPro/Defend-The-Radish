@@ -9,7 +9,11 @@ namespace DTR.Path
     /// 路径管理
     /// </summary>
     public class PathManager 
-    {       
+    {
+        /// <summary>
+        /// 路径长度
+        /// </summary>
+        public static int PathLength => m_PathData.IndexLi.Count;
         /// <summary>
         /// 当前路径的头
         /// </summary>
@@ -50,15 +54,30 @@ namespace DTR.Path
             }
         }
         /// <summary>
+        /// 该网格所对应路径中的索引
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <returns></returns>
+        public static int GridIndexOf(IGrid grid)
+        {
+            for(int index=0;index<m_PathData.IndexLi.Count;index++)
+            {
+                if (GetGrid(index) == grid)
+                {
+                    return index;
+                }
+            }
+            return -1;
+        }
+        /// <summary>
         /// 获取网格
         /// </summary>
         /// <param name="index">路径中网格的索引</param>
         /// <returns></returns>
         public static IGrid GetGrid(int index)
         {
-            if(m_PathData.IndexLi.Count>index)
+            if (m_PathData.IndexLi.Count>index)
             {
-                Debug.Log(GetGrid(m_PathData.IndexLi[index]));
                 return GetGrid(m_PathData.IndexLi[index]);
             }
             return null;

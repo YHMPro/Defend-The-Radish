@@ -33,9 +33,6 @@ namespace DTR
                 return GameDataManager.GetLevelData(m_RelyData, m_NowLevelIndex);
             }
         }
-
-
-
         private static Dictionary<int[], Tower.Tower> m_TowerDic = new Dictionary<int[], Tower.Tower>();
         #region TowerBuilder
         /// <summary>
@@ -53,7 +50,7 @@ namespace DTR
                     return;
                 }
             }
-            m_TowerDic.Add(index, tower.GetComponent<Tower.Tower>());
+            //m_TowerDic.Add(index, tower.GetComponent<Tower.Tower>());
             callback?.Invoke(tower);
         }
      

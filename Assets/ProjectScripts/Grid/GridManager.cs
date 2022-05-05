@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using Farme;
 using DTR.Data;
+using Farme.UI;
+
 namespace DTR.MapGrid
 {
     /// <summary>
@@ -44,23 +46,33 @@ namespace DTR.MapGrid
             if(m_GridManagerGo==null)
             {
                 m_GridManagerGo = new GameObject("GridManager");
-                MesgManager.MesgListen<IGrid>(OperationGridEvent, OnOperationGrid);
+                MesgManager.MesgListen<IGrid>(OperationGridEvent, GridManager.OnOperationGrid);
             }
             CreateGridGroup(() => 
             {
-                Update();
-                //MonoSingletonFactory<ShareMono>.GetSingleton().ApplyUpdateAction(EnumUpdateAction.Standard,Update);
+                foreach (var grid in m_GridLi)
+                {
+                    grid.Position = Offset + new Vector2(grid.Index[0] * m_Distance, grid.Index[1] * m_Distance);
+                }
+                MonoSingletonFactory<ShareMono>.GetSingleton().ApplyUpdateAction(EnumUpdateAction.Standard,Update);
             });      
         }
-        /// <summary>
-        /// 更新
-        /// </summary>
+        private RaycastHit2D m_HitInfo;
         private static void Update()
         {
-            foreach (var grid in m_GridLi)
-            {
-                grid.Position = Offset + new Vector2(grid.Index[0] * m_Distance, grid.Index[1] * m_Distance);
-            }
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    if(Physics2D.Raycast())
+            //    if (!MonoSingletonFactory<WindowRoot>.SingletonExist)
+            //    {
+            //        return;
+            //    }
+            //    WindowRoot windowRoot = MonoSingletonFactory<WindowRoot>.GetSingleton();
+            //    if (windowRoot.ES.IsPointerOverGameObject())//当操作对象是UI时则屏蔽此次事件响应
+            //    {
+            //        return;
+            //    }
+            //}
         }
         /// <summary>
         /// 创建网格组

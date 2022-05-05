@@ -1,7 +1,21 @@
 ﻿
 using System;
 namespace DTR
-{
+{ 
+    /// <summary>
+    /// 标签类型
+    /// </summary>
+    public enum EnumTag
+    {
+        /// <summary>
+        /// 静态
+        /// </summary>
+        Static,
+        /// <summary>
+        /// 动态
+        /// </summary>
+        Dynamic
+    }  
     /// <summary>
     /// 游戏状态
     /// </summary>
@@ -28,7 +42,23 @@ namespace DTR
     /// 怪物类型
     /// </summary>
     public enum EnumMonster
-    {
+    { 
+        /// <summary>
+        /// 绵羊
+        /// </summary>
+        Sheep,
+        /// <summary>
+        /// 独眼
+        /// </summary>
+        SingleEye,
+        /// <summary>
+        /// 漂浮
+        /// </summary>
+        Flotage,
+        /// <summary>
+        /// 海星
+        /// </summary>
+        Starfish,
 
     }
     [Serializable]

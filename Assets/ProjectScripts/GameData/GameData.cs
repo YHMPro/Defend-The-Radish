@@ -14,9 +14,6 @@ namespace DTR.Data
         /// 关卡模式数据容器
         /// </summary>
         public Dictionary<string, LevelModelData> LevelModelDataDic = new Dictionary<string, LevelModelData>();
-
-
-
     } 
     /// <summary>
     /// 关卡模式数据

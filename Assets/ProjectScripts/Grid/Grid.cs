@@ -11,13 +11,15 @@ namespace DTR.MapGrid
     /// 网格
     /// </summary>
     public class Grid : BaseMono, IGrid
-    {
+    {       
+        public GameObject PutObj { get; set;}
         private GameObject m_Tag = null;
         public GameObject Tag
         {
             get { return m_Tag; }
             set { m_Tag = value; }
         }
+        [SerializeField]
         private EnumGrid m_GridType = EnumGrid.Empty;
         public EnumGrid GridType
         {
@@ -86,9 +88,7 @@ namespace DTR.MapGrid
             {
                 return;
             }
-
             MesgManager.MesgTirgger<IGrid>(GridManager.OperationGridEvent,this);
-
             #region LevelBuilder
             //if (m_GridType == EnumGrid.Empty)
             //{
@@ -102,17 +102,17 @@ namespace DTR.MapGrid
             //    m_PathIndex = -1;
             //}
             #endregion
-            if (InterfaceManager.GetInterfaceLi(GetType().Name,out List<IGrid> mapGridLi))
-            {
+            //if (InterfaceManager.GetInterfaceLi(GetType().Name,out List<IGrid> mapGridLi))
+            //{
                 
-            }
-            if(windowRoot.GetWindow("GameSceneWindow_ScreenSpaceCamera", out StandardWindow gsWindow))
-            {
-                if(gsWindow.GetPanel("GameAssistPanel",out GameAssistPanel gAPanel))
-                {                  
-                    gAPanel.SetState(EnumPanelState.Show);
-                }
-            }       
+            //}
+            //if(windowRoot.GetWindow("GameSceneWindow_ScreenSpaceCamera", out StandardWindow gsWindow))
+            //{
+            //    if(gsWindow.GetPanel("GameAssistPanel",out GameAssistPanel gAPanel))
+            //    {                  
+            //        gAPanel.SetState(EnumPanelState.Show);
+            //    }
+            //}       
         }
     }
 }

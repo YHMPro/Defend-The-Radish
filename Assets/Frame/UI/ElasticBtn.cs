@@ -8,11 +8,42 @@ using Farme.Extend;
 using System;
 namespace Farme.UI
 {
+    [Serializable]
     /// <summary>
     /// 富有弹性的按钮
     /// </summary>
     public class ElasticBtn : Button
     {
+        /// <summary>
+        /// 文本
+        /// </summary>
+        private Text m_Text = null;
+        public string Content
+        {
+            set
+            {       
+                if(m_Text==null)
+                {
+                    m_Text=GetComponentInChildren<Text>(true);
+                }
+                if(m_Text!=null)
+                {
+                    m_Text.text = value;
+                }
+            }
+            get
+            {
+                if (m_Text == null)
+                {
+                    m_Text = GetComponentInChildren<Text>(true);
+                }
+                if (m_Text!=null)
+                {
+                    return m_Text.text;
+                }
+                return null;
+            }
+        }
         /// <summary>
         /// 矩形转换
         /// </summary>
@@ -39,8 +70,8 @@ namespace Farme.UI
         private RenderMode m_RelyCanvasRenderMode = RenderMode.ScreenSpaceOverlay;
 
         protected override void Awake()
-        {
-            base.Awake();
+        {      
+            base.Awake();            
             m_Bg = GetComponent<Image>();
             m_NativeScale = transform.localScale;
             m_RectTransform = transform as RectTransform;
@@ -61,6 +92,7 @@ namespace Farme.UI
                 MonoSingletonFactory<ShareMono>.GetSingleton().RemoveUpdateAction(EnumUpdateAction.Standard, this.ScaleUpdate);
             }
             transform.localScale = m_NativeScale;
+            
         }
         private void ScaleUpdate()
         {

@@ -51,10 +51,11 @@ namespace DTR.LevelBuilder
 
         private void OnValidate()
         {
-            LevelBuilderTool.RelyData.LevelModel = LevelModel;
-            LevelBuilderTool.RelyData.LevelTheme = LevelTheme;
-            LevelBuilderTool.LevelLock = LevelLock;
-            LevelBuilderTool.LevelIndex = LevelIndex;           
+            
+            //LevelBuilderTool.RelyData.LevelModel = LevelModel;
+            //LevelBuilderTool.RelyData.LevelTheme = LevelTheme;
+            //LevelBuilderTool.LevelLock = LevelLock;
+            //LevelBuilderTool.LevelIndex = LevelIndex;           
         }
     }
 }
